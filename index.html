@@ -1,0 +1,274 @@
+<<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>辉腾家具城 - 品质家居生活</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: '微软雅黑', Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* 标题样式 */
+        .header {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('images/home-bg.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                rgba(255,255,255,0) 45%,
+                rgba(255,255,255,0.8) 50%,
+                rgba(255,255,255,0) 55%);
+            animation: lightGlow 3s infinite;
+        }
+
+        .header h1 {
+            position: relative;
+            font-size: 4em;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, 
+                #d4af37 20%, 
+                #fff 45%, 
+                #d4af37 70%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: metalShine 4s infinite;
+            z-index: 1;
+        }
+
+        @keyframes metalShine {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes lightGlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* 新版联系方式样式 */
+        .contact-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.95);
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            z-index: 1000;
+            border: 1px solid rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-info > div {
+            display: flex;
+            align-items: flex-start;
+            margin: 10px 0;
+        }
+
+        .icon {
+            font-size: 20px;
+            margin-right: 12px;
+            margin-top: 3px;
+        }
+
+        .label {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+
+        .phone {
+            font-size: 22px;
+            color: #c00;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .address {
+            color: #333;
+            font-size: 14px;
+            line-height: 1.4;
+            max-width: 200px;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-3px);
+        }
+
+        /* 产品展示区样式 */
+        .product-section {
+            background: #fff;
+            margin: 40px auto;
+            padding: 30px 20px;
+            max-width: 1200px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            color: #cdaa7d;
+            font-size: 28px;
+            margin-bottom: 15px;
+            border-left: 4px solid #cdaa7d;
+            padding-left: 15px;
+        }
+
+        .section-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid #cdaa7d;
+        }
+
+        .image-placeholder {
+            background: #ddd;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+                padding: 0 15px;
+            }
+            .header {
+                height: 300px;
+            }
+            .contact-box {
+                right: 10px;
+                bottom: 10px;
+                padding: 12px;
+            }
+            .phone {
+                font-size: 18px;
+            }
+            .address {
+                font-size: 13px;
+            }
+            .icon {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>辉腾家具城欢迎您</h1>
+    </header>
+
+    <!-- 新版联系方式模块 -->
+    <div class="contact-box">
+        <div class="contact-info">
+            <div class="address-info">
+                <span class="icon">📍</span>
+                <div>
+                    <div class="label">地址：</div>
+                    <div class="address">东营市垦利区胜坨镇巴东村</div>
+                </div>
+            </div>
+            <div class="phone-info">
+                <span class="icon">📞</span>
+                <div>
+                    <div class="label">联系方式：</div>
+                    <div class="phone">136 9546 9391</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 修改后的产品展示区 -->
+    <div class="product-section">
+        <h2 class="section-title">豪华组合</h2>
+        <p class="section-description">精选实木椅，提供4-12人位多种规格选择。</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/dining-1.jpg" alt="6">
+                <div class="image-fallback">dining-1.jpg</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/dining-2.jpg" alt="5">
+                <div class="image-fallback">dining-2.jpg</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/dining-3.jpg" alt="4">
+                <div class="image-fallback">dining-3.jpg</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-section">
+        <h2 class="section-title">端庄系列</h2>
+        <p class="section-description">中式家具组合。</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/outdoor-1.jpg" alt="3">
+                <div class="image-fallback">outdoor-1.jpg</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/outdoor-2.jpg" alt="2">
+                <div class="image-fallback">outdoor-2.jpg</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/outdoor-3.jpg" alt="1">
+                <div class="image-fallback">outdoor-3.jpg</div>
+            </div>
+        </div>
+    </div>
+
+   </div>
+
+</body>
+</html>
